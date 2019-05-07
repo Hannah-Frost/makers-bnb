@@ -11,4 +11,5 @@ class MakersBnB < Sinatra::Base
     erb :properties
   end
 
+run! if app_file == $0
 end

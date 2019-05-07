@@ -1,3 +1,5 @@
+require 'pg'
+
 class Property
   attr_reader :name, :desc, :price
 
@@ -6,10 +8,11 @@ class Property
     @desc = desc
     @price = price
   end
-def self.all
+
+  def self.all
     connection = PG.connect(dbname: 'makersbnb')
-    result = connection.exec('SELECT * FROM properties')
+    result = connection.exec('SELECT * FROM properties;')
     result.map { |property|
-      Property.new name: property['name'], desc: property['description'], price: property['price'] }
-    end
+      Property.new(name: property['name'], desc: property['description'], price: property['price']) }
+  end
 end
