@@ -1,9 +1,12 @@
 require 'sinatra/base'
 
-class Battle < Sinatra::Base
+class MakersBnB < Sinatra::Base
 
   get '/' do
   end
 
-  run! if app_file == $0
+  get '/listings' do
+    @property_list = []
+    erb :listings
+  end
 end
