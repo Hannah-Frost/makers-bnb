@@ -1,2 +1,7 @@
 <h1>Makers BnB</h1>
-<%= @property %>
+<%# <%= @property %> %>
+<ul>
+  <% @property.each do |property| %>
+    <li> <%= property.name %> <%= property.desc %> <%= property.price %></li>
+  <% end %>
+</ul>
