@@ -67,3 +67,12 @@ As a customer,
 so that I can complete my booking,
 I want to send confirmation of my booking.
 ```
+
+## How to set up the database
+
+In your command line, type the following:
+1. `psql` : open your user database.
+2. `CREATE DATABASE makersbnb;` : create a database.
+3. `CREATE DATABASE makersbnb_test;` : create a database for testing.
+4. `\c makersbnb;` : connect to the bookmark_manager database.
+5. Access 01_create__table.sql located within db/migrations/. Run the query within both databases.
