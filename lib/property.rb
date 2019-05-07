@@ -1,11 +1,11 @@
 require 'pg'
 
 class Property
-  attr_reader :name, :desc, :price
+  attr_reader :name, :description, :price
 
-  def initialize(name:, desc:, price:)
+  def initialize(name:, description:, price:)
     @name = name
-    @desc = desc
+    @description = description
     @price = price
   end
 
@@ -13,6 +13,11 @@ class Property
     connection = PG.connect(dbname: 'makersbnb')
     result = connection.exec('SELECT * FROM properties;')
     result.map { |property|
-      Property.new(name: property['name'], desc: property['description'], price: property['price']) }
+      Property.new(name: property['name'], description: property['description'], price: property['price']) }
+  end
+
+  def self.add(name:, description:, price:)
+    connection = PG.connect(dbname: 'makersbnb')
+    connection.exec("INSERT INTO properties (name, description, price) VALUES('#{name}', '#{description}', '#{price}') RETURNING name, description, price")
   end
 end
