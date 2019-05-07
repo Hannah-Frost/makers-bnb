@@ -6,6 +6,11 @@ class MakersBnB < Sinatra::Base
   get '/' do
   end
 
+  get '/add' do
+    erb :add
+  end
+
+
   get '/properties' do
     @property = Property.all
     erb :properties
