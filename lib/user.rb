@@ -13,7 +13,7 @@ class User
     if ENV['ENVIRONMENT'] == 'test'
     connection = PG.connect(dbname: 'makersbnb_test')
     else
-      connection = PG.connect(dbname: 'markersbnb')
+      connection = PG.connect(dbname: 'makersbnb')
     end
     connection.exec("INSERT INTO users (name, email, password) VALUES('#{name}', '#{email}', '#{password}') RETURNING name, email, password")
 
