@@ -17,11 +17,12 @@ enable :sessions
   end
 
   post '/sign_in' do
-    User.exist?(account_email: params[:account_email, account_password: params[:account_password]])
+    session[:account_email] = params[:account_email]
     redirect '/properties'
   end
 
   get '/properties' do
+    @user = User.exist?(account_email: session[:account_email])
     @property = Property.all
     @name = session[:name]
     erb :properties
