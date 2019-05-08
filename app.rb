@@ -10,9 +10,14 @@ enable :sessions
     erb :user
   end
 
-  post '/' do
+  post '/create_account' do
     User.add(name: params[:name], email: params[:email], password: params[:password])
     session[:name] = params[:name]
+    redirect '/properties'
+  end
+
+  post '/sign_in' do
+    User.exist?(account_email: params[:account_email, account_password: params[:account_password]])
     redirect '/properties'
   end
 
