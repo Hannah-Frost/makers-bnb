@@ -15,6 +15,21 @@ class User
     else
       connection = PG.connect(dbname: 'makersbnb')
     end
-    connection.exec("INSERT INTO users (name, email, password) VALUES('#{name}', '#{email}', '#{password}') RETURNING name, email, password")
+    result = connection.exec("INSERT INTO users (name, email, password) VALUES('#{name}', '#{email}', '#{password}') RETURNING name, email, password")
+    User.new(name: result[0]['name'], email: result[0]['email'], password: result[0]['password'])
+  end
+
+  def self.exist?(email)
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'makersbnb_test')
+    else
+      connection = PG.connect(dbname: 'makersbnb')
+    end
+    result = connection.query("SELECT * FROM users WHERE email = '#{email}'")
+    if result[0]['email'] == email
+      true
+    else
+      false
+    end
   end
 end
