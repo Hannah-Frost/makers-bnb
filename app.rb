@@ -1,13 +1,24 @@
 require 'sinatra/base'
 require './lib/property.rb'
+require './lib/user.rb'
 
 class MakersBnB < Sinatra::Base
 
+enable :sessions
+
   get '/' do
+    erb :user
+  end
+
+  post '/' do
+    User.add(name: params[:name], email: params[:email], password: params[:password])
+    session[:name] = params[:name]
+    redirect '/properties'
   end
 
   get '/properties' do
     @property = Property.all
+    @name = session[:name]
     erb :properties
   end
 
