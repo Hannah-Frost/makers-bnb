@@ -68,6 +68,14 @@ so that I can complete my booking,
 I want to send confirmation of my booking.
 ```
 
+## How to use the app
+
+1. Clone this repository.
+2. Run `bundle install` in your command line.
+3. Set up the required databases (follow the 'How to set up the database' instructions below).
+4. Type `ruby app.rb` into your command line to start the server.
+5. Use the url `http://localhost:4567/` to view the app (you will only be able to view the app if you have started the server).
+
 ## How to set up the database
 
 In your command line, type the following:
@@ -75,4 +83,4 @@ In your command line, type the following:
 2. `CREATE DATABASE makersbnb;` : create a database.
 3. `CREATE DATABASE makersbnb_test;` : create a database for testing.
 4. `\c makersbnb;` : connect to the bookmark_manager database.
-5. Access 01_create__table.sql located within db/migrations/. Run the query within both databases.
+5. Access 01_create__table.sql located within db/migrations/. Run the queries within both databases.
