@@ -1,4 +1,5 @@
-
+<div>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -7,6 +8,7 @@
       display: block;
       margin-left: auto;
       margin-right: auto;
+      padding-top: 30px;
     }
     </style>
   </head>
@@ -30,7 +32,17 @@
     body {
       font-family: 'Raleway', sans-serif;
       background-color: #EBF8FD;
-      font-family: 'Raleway', sans-serif;
+      font-family: '', sans-serif;
+    }
+    .button {
+      border-radius: 15px 15px 15px 15px;
+      border: 2px solid black;
+      background-color: #DCDCDC;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: #33E3FF;
+      color: white;
     }
     /* body {background-color: #A3B0E4; text-align: center; font-family: 'Quicksand'; padding-top: 200px;}
     h2   {color: #D13EA9; font-family: 'Londrina Sketch', cursive; font-size: 50px;}
@@ -42,11 +54,13 @@
       <h2>Sign in</h2>
       <h1></h1>
       <form action="/sign_in" method="post">
+        <input type="text" name="account_name" placeholder="Name">
+        <h1></h1>
         <input type="text" name="account_email" placeholder="Email">
         <h1></h1>
         <input type="text" name="account_password" placeholder="Password">
         <h1></h1>
-        <input type="submit" value="Sign In">
+         <input type="submit" value="Sign In" class="button">
       </form>
     </div>
   </body>
@@ -74,8 +88,9 @@
         <h1></h1>
         <input type="text" name="password" placeholder="Password">
         <h1></h1>
-        <input type="submit" value="Create Account">
+        <input type="submit" value="Create Account" class="button">
       </form>
     </div>
   </body>
 </html>
+</div>
