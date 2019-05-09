@@ -22,7 +22,7 @@ feature 'properties can be altered' do
     click_button 'Add Listing!'
     expect(page).to have_content '1000'
   end
-  
+
   scenario 'property is displayed' do
     create_account
     visit '/add'

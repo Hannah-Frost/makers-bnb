@@ -19,7 +19,7 @@ class User
     User.new(name: result[0]['name'], email: result[0]['email'], password: result[0]['password'])
   end
 
-  def self.exist?(email)
+  def self.exist?(email, password)
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'makersbnb_test')
     else
@@ -27,7 +27,6 @@ class User
     end
     result = connection.exec("SELECT * FROM users WHERE email = '#{email}'")
     user = User.new(name: result[0]['name'], email: result[0]['email'], password: result[0]['password'])
-    return true if user.email == email
-    false
+    return true if user.email == email && user.password == password
   end
 end

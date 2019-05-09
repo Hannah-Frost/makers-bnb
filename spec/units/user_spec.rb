@@ -19,7 +19,7 @@ describe User do
 
       User.add(name: 'Hannah', email: 'test@gmail.com', password: 'password123')
 
-      expect(User.exist?('test@gmail.com')).to eq true
+      expect(User.exist?('test@gmail.com', 'password123')).to eq true
     end
   end
 end

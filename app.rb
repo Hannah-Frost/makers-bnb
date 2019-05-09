@@ -21,11 +21,12 @@ enable :sessions
     user = User.new(name: params[:account_name], email: params[:account_email], password: params[:password])
     session[:name] = user.name
     session[:email] = user.email
+    session[:password] = user.password
     redirect '/properties'
   end
 
   get '/properties' do
-    @user = User.exist?(session[:email])
+    @user = User.exist?(session[:email], session[:password])
     @property = Property.all
     @name = session[:name]
     @email = session[:email]
@@ -39,7 +40,6 @@ enable :sessions
   post '/add' do
     Property.add(name: params[:name], description: params[:description], price: params[:price])
     redirect '/properties'
-    #redirect to property ID page?
   end
 
 run! if app_file == $0
