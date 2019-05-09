@@ -21,8 +21,16 @@
     <style>
     .class1 {
       float:left;
-      padding-right:5px;
+      padding: 0px 5px 0px 210px;
       text-align: center;
+    }
+    h1 {
+      padding: 10px 0px 10px 0px;
+    }
+    body {
+      font-family: 'Raleway', sans-serif;
+      background-color: #EBF8FD;
+      font-family: 'Raleway', sans-serif;
     }
     /* body {background-color: #A3B0E4; text-align: center; font-family: 'Quicksand'; padding-top: 200px;}
     h2   {color: #D13EA9; font-family: 'Londrina Sketch', cursive; font-size: 50px;}
@@ -32,9 +40,12 @@
   <body>
     <div class = "class1">
       <h2>Sign in</h2>
+      <h1></h1>
       <form action="/sign_in" method="post">
         <input type="text" name="account_email" placeholder="Email">
+        <h1></h1>
         <input type="text" name="account_password" placeholder="Password">
+        <h1></h1>
         <input type="submit" value="Sign In">
       </form>
     </div>
@@ -48,17 +59,21 @@
   <style>
   .class2 {
     float:right;
-    padding-left:5px;
+    padding: 0px 210px 0px 5px;
     text-align: center;
   }
   </style>
   <body>
     <div class="class2">
       <h2>Create Account</h2>
+      <h1></h1>
       <form action="/create_account" method="post">
-        <input type="text" name="name" placeholder='Name' >
+        <input type="text" name="name" placeholder='Name'>
+        <h1></h1>
         <input type="text" name="email" placeholder="Email">
+        <h1></h1>
         <input type="text" name="password" placeholder="Password">
+        <h1></h1>
         <input type="submit" value="Create Account">
       </form>
     </div>
