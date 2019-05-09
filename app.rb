@@ -11,20 +11,24 @@ enable :sessions
   end
 
   post '/create_account' do
-    User.add(name: params[:name], email: params[:email], password: params[:password])
-    session[:name] = params[:name]
+    user = User.add(name: params[:name], email: params[:email], password: params[:password])
+    session[:name] = user.name
+    session[:email] = user.email
     redirect '/properties'
   end
 
   post '/sign_in' do
-    session[:account_email] = params[:account_email]
+    user = User.new(name: params[:account_name], email: params[:account_email], password: params[:password])
+    session[:name] = user.name
+    session[:email] = user.email
     redirect '/properties'
   end
 
   get '/properties' do
-    @user = User.exist?(account_email: session[:account_email])
+    @user = User.exist?(session[:email])
     @property = Property.all
     @name = session[:name]
+    @email = session[:email]
     erb :properties
   end
 

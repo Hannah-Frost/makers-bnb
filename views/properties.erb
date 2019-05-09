@@ -1,5 +1,7 @@
 <h1>Makers BnB</h1>
 <h2>Hi <%= @name %></h2>
+<h2>Hi <%= @email %></h2>
+<h2>Hi <%= @user %></h2>
 <ul>
   <% @property.each do |property| %>
     <li> <%= property.name %> <%= property.description %> <%= property.price %></li>
