@@ -11,6 +11,12 @@ describe User do
       expect(user.name).to eq 'Hannah'
       expect(user.email).to eq 'test@gmail.com'
     end
+
+    it 'hashes the password using BCrypt' do
+      expect(BCrypt::Password).to receive(:create).with('password123')
+
+      User.add(name: 'Hannah', email: 'test@example.com', password: 'password123')
+    end
   end
 
   describe '#exist' do
@@ -19,7 +25,7 @@ describe User do
 
       User.add(name: 'Hannah', email: 'test@gmail.com', password: 'password123')
 
-      expect(User.exist?('test@gmail.com', 'password123')).to eq true
+      expect(User.exist?('test@gmail.com')).to eq true
     end
   end
 end

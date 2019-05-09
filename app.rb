@@ -21,12 +21,11 @@ enable :sessions
     user = User.new(name: params[:account_name], email: params[:account_email], password: params[:password])
     session[:name] = user.name
     session[:email] = user.email
-    session[:password] = user.password
     redirect '/properties'
   end
 
   get '/properties' do
-    @user = User.exist?(session[:email], session[:password])
+    @user = User.exist?(session[:email])
     @property = Property.all
     @name = session[:name]
     @email = session[:email]
