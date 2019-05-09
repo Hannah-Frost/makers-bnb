@@ -3,7 +3,7 @@ feature 'properties can be altered' do
     create_account
     visit '/add'
     fill_in(:name, with: "One Big House")
-    click_button 'Add Listing!'
+    click_button 'Confirm Listing!'
     expect(page).to have_content 'One Big House'
   end
 
@@ -11,7 +11,7 @@ feature 'properties can be altered' do
     create_account
     visit '/add'
     fill_in(:description, with: "Its large")
-    click_button 'Add Listing!'
+    click_button 'Confirm Listing!'
     expect(page).to have_content 'Its large'
   end
 
@@ -19,7 +19,7 @@ feature 'properties can be altered' do
     create_account
     visit '/add'
     fill_in(:price, with: "1000")
-    click_button 'Add Listing!'
+    click_button 'Confirm Listing!'
     expect(page).to have_content '1000'
   end
 
@@ -27,7 +27,7 @@ feature 'properties can be altered' do
     create_account
     visit '/add'
     fill_in(:name, with: "House")
-    click_button 'Add Listing!'
+    click_button 'Confirm Listing!'
     expect(page).to have_content 'House'
   end
 end

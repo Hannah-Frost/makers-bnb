@@ -32,6 +32,11 @@ enable :sessions
     erb :properties
   end
 
+  get '/property' do
+    @property = Property.all
+    erb :property
+  end
+
   get '/add' do
     erb :add
   end

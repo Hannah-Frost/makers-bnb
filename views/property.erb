@@ -1,0 +1,13 @@
+<h1>Makers BnB</h1>
+
+<% @property.each do |property| %>
+<li><%= property.name %></li>
+<li><%= property.price %></li>
+<li><%= property.description %></li>
+<% end %>
+
+<form method="post" action="/add">
+  <input type="text" name="month" placeholder="month" />
+    <input type="text" name="date" placeholder="date" />
+  <input type="submit" value="Request Booking" />
+</form>

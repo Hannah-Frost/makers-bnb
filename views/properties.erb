@@ -4,6 +4,18 @@
 <h2>Hi <%= @user %></h2>
 <ul>
   <% @property.each do |property| %>
-    <li> <%= property.name %> <%= property.description %> <%= property.price %></li>
+    <li><%= property.name %>:</li>
+    <li><%= property.description %></li>
+    <li><%= property.price %></li>
+    <!-- Not part of recent merge -->
+    <form action="/property">
+      <input type="submit" value="Book A Date">
+    </form>
+    <!-- Update merge request -->
   <% end %>
 </ul>
+    <!-- Not part of recent merge -->
+<form action="/add">
+  <input type="submit" value="Add Listing!" />
+</form>
+    <!-- Update merge request -->
