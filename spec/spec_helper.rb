@@ -4,6 +4,7 @@ ENV['ENVIRONMENT'] = 'test'
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
+require 'features/account_helper'
 
 require_relative './reset_test_database'
 

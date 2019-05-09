@@ -1,4 +1,4 @@
-feature 'create account' do
+feature 'creating an account and signing in' do
   scenario 'allows user to create account' do
     visit '/'
     fill_in(:name, with: 'Kiah')
