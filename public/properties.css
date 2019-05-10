@@ -1,0 +1,37 @@
+h1 {
+  font-family: 'Poppins', sans-serif;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 500px 0px 500px;
+}
+
+h2 {
+  font-family: 'Poppins', sans-serif;
+}
+ul {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #EBF8FD;
+}
+
+.button {
+  border-radius: 15px 15px 15px 15px;
+  border: 3px solid #C1D3D6;
+  background-color: #DCDCDC;
+  color: black;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #89D1DD;
+  color: white;
+}
+
+sign-out {
+  display: inline-block;
+  float: right;
+  padding: 0px 15px 0px 210px;
+}

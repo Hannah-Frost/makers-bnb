@@ -1,8 +1,12 @@
-<form action="/sign_out">
-  <input type="submit" value="Sign Out">
-</form>
-
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="properties.css">
 <h1>Makers BnB</h1>
+<form action="/sign_out">
+  <sign-out>
+    <input type="submit" value="Sign Out" class="button" >
+  </sign-out>
+</form>
 <h2>Hi <%= @name %></h2>
 <h2>Hi <%= @email %></h2>
 <h2>Hi <%= @user %></h2>
@@ -14,10 +18,10 @@
     <li><%= property.description %></li>
     <li><%= property.price %></li>
     <form action="/property">
-      <input type="submit" value="Book A Date">
+      <input type="submit" value="Book A Date" class="button">
     </form>
   <% end %>
 </ul>
 <form action="/add">
-  <input type="submit" value="Add Listing!" />
+  <input type="submit" value="Add Listing!" class="button"/>
 </form>
