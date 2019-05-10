@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./stylesheet.css">
+    <link rel="stylesheet" href="stylesheet.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 
     <title>MakersBnB</title>
@@ -16,12 +16,20 @@
       <div class="logo">
         <img src="https://i.ibb.co/HzFTZgX/logo-transparent.png" alt="logo" border="0" class="center" >
       </div>
-      <div class="background">
+      <!-- <div class="background">
         <img src="https://i.ibb.co/k4F4H9c/sky.png" alt="sky" border="0">
-      </div>
+      </div> -->
     </div>
   </head>
 
+  <body>
+    <h2>Sign in</h2>
+    <form action="/sign_in" method="post">
+      <input type="text" name="account_name" placeholder="Name">
+      <input type="text" name="account_email" placeholder="Email">
+      <input type="text" name="account_password" placeholder="Password">
+        <input type="submit" value="Sign In">
+    </form>
 
   <body>
     <div class = "class1">
