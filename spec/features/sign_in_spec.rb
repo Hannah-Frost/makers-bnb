@@ -11,13 +11,21 @@ end
 
 feature 'sign in' do
   scenario 'user can sign in with a matching account' do
-    User.add(name: 'Kiah', email: 'example@gmail.com', password: '123')
+    User.add(name: 'Mat', email: 'test@gmail.com', password: '123')
 
     visit '/'
-    fill_in(:account_name, with: "Kiah")
-    fill_in(:account_email, with: "example@gmail.com")
-    fill_in(:account_password, with: "123")
-    click_button 'Sign In'
-    expect(page).to have_content 'Kiah'
+    sign_in_account
+    expect(page).to have_content 'Mat'
+  end
+end
+
+feature 'sign out' do
+  scenario 'user can sign out of an account' do
+    User.add(name: 'Mat', email: 'test@gmail.com', password: '123')
+
+    visit '/'
+    sign_in_account
+    click_button 'Sign Out'
+    expect(page).to have_content "Sign in"
   end
 end

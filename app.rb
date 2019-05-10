@@ -24,6 +24,12 @@ enable :sessions
     redirect '/properties'
   end
 
+  get '/sign_out' do
+    session[:name] = nil
+    session[:email] = nil
+    redirect '/'
+  end
+
   get '/properties' do
     @user = User.exist?(session[:email])
     @property = Property.all
