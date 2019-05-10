@@ -1,23 +1,31 @@
-<form action="/sign_out">
-  <input type="submit" value="Sign Out">
-</form>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="properties.css">
+<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 
-<h1>Makers BnB</h1>
-<h2>Hi <%= @name %></h2>
-<h2>Hi <%= @email %></h2>
-<h2>Hi <%= @user %></h2>
-<h2><%= @calendar.day %></h2>
-<h2><%= @calendar.month %></h2>
-<ul>
-  <% @property.each do |property| %>
-    <li><%= property.name %>:</li>
-    <li><%= property.description %></li>
-    <li><%= property.price %></li>
-    <form action="/property">
-      <input type="submit" value="Book A Date">
-    </form>
-  <% end %>
-</ul>
-<form action="/add">
-  <input type="submit" value="Add Listing!" />
-</form>
+<body>
+  <h1>Makers BnB</h1>
+  <h2>Hi
+    <%= @name %></h2>
+  <h2>Hi
+    <%= @email %></h2>
+  <h2>Hi
+    <%= @user %></h2>
+  <h2><%= @calendar.day %></h2>
+  <h2><%= @calendar.month %></h2>
+  <ul>
+    <% @property.each do |property| %>
+      <li><%= property.name %>:</li>
+      <li><%= property.description %></li>
+      <li><%= property.price %></li>
+      <form action="/property">
+        <input type="submit" value="Book A Date" class="button">
+      </form>
+    <% end %>
+  </ul>
+  <form action="/add">
+    <input type="submit" value="Add Listing!" class="button">
+  </form>
+  <form action="/sign_out">
+    <input type="submit" value="Sign Out" class="button">
+  </form>
+</body>

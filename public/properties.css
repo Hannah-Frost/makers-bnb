@@ -1,0 +1,20 @@
+h1 {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #EBF8FD;
+}
+
+.button {
+  border-radius: 15px 15px 15px 15px;
+  border: 3px solid #C1D3D6;
+  background-color: #DCDCDC;
+  color: black;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #89D1DD;
+  color: white;
+}
