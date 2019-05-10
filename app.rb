@@ -7,6 +7,11 @@ class MakersBnB < Sinatra::Base
 
 enable :sessions
 
+# get '/property_check' do
+#
+#   redirect '/property'
+# end
+
   get '/' do
     session[:calendar] = Calendar.new
     erb :user
