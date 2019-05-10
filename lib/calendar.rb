@@ -22,7 +22,7 @@ class Calendar
     else
       connection = PG.connect(dbname: 'makersbnb')
     end
-    connection.exec("SELECT * FROM calendar WHERE month = '#{@month}'")
+    connection.exec("SELECT month, day, availability FROM calendar WHERE month = '#{@month}' AND day BETWEEN '#{@start_day}' AND '#{@end_day}';")
   end
 
 end
