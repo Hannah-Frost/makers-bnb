@@ -1,12 +1,39 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="properties.css">
 <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="properties.css">
 
-<h1>Makers BnB</h1>
-<h2>Welcome <%= @name %>!</h2>
-<h2>This is testing the calendar month: <%= @calendar.month %></h2>
-<h2>This is testing the calendar starting day: <%= @calendar.start_day %></h2>
-<h2>This is testing the calendar ending day: <%= @calendar.end_day %></h2>
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="https://i.ibb.co/HzFTZgX/logo-transparent.png" width="40" height="40" class="d-inline-block align-top" alt="">
+    <text>Makers BnB</text>
+  </a>
+
+  <form action="/add">
+    <add-listing>
+      <input type="submit" value="Add Listing!" class="button">
+    </add-listing>
+  </form>
+  <form action="/sign_out">
+    <sign-out>
+      <input type="submit" value="Sign Out" class="button" >
+    </sign-out>
+  </form>
+
+</nav>
+<div class="container">
+  <section class="row">
+    <div class="col-5"></div>
+    <div class="col-4 h2">
+      <h2>Hi <%= @name %></h2>
+    </div>
+    <div class="col-3">
+      <h3><%= @email %></h3>
+    </div>
+  </section>
+</div>
+<!-- <h2>Hi <%= @user %></h2>
+<h2><%= @calendar.day %></h2>
+<h2><%= @calendar.month %></h2> -->
 <ul>
   <% @property.each do |property| %>
     <li><%= property.name %>:</li>
@@ -17,9 +44,3 @@
     </form>
   <% end %>
 </ul>
-<form action="/add">
-  <input type="submit" value="Add Listing!" class="button" />
-</form>
-<form action="/sign_out">
-  <input type="submit" value="Sign Out" class="button">
-</form>
