@@ -63,7 +63,8 @@ describe Calendar do
 
   describe '#available?' do
     it 'returns true if all dates are available' do
-      PG.connect(dbname: 'makersbnb_test')
+      connection = PG.connect(dbname: 'makersbnb_test')
+      connection.exec("INSERT INTO calendar (property, month, day, availability) VALUES('House', 'January', '1', 'Y')")
 
       calendar = Calendar.new
       calendar.find_availability

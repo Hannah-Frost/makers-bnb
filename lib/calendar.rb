@@ -23,12 +23,6 @@ class Calendar
     @end_day = day
   end
 
-  def confirm_availability
-    self.find
-    available?
-    @unavailable = 0
-  end
-
   def find_availability
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'makersbnb_test')
@@ -46,7 +40,13 @@ class Calendar
   end
 
   def available?
-    @unavailable > 0 ? false : true
+    find_availability
+    if @unavailable > 0
+      @unavailable = 0
+      false
+    else
+      true
+    end
   end
 
 end

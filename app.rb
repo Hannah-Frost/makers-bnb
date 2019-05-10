@@ -50,6 +50,15 @@ enable :sessions
     calendar = Calendar.new
     calendar.add_month(params[:month])
     session[:calendar] = calendar
+    redirect '/confirm_booking'
+  end
+
+  get '/confirm_booking' do
+    @calendar = session[:calendar]
+    erb :confirm_booking
+  end
+
+  post '/confirm_booking' do
     redirect '/properties'
   end
 
