@@ -19,7 +19,6 @@
     </sign-out>
   </form>
 
-</nav>
 <div class="container">
   <section class="row">
     <div class="col-5"></div>
@@ -32,15 +31,15 @@
   </section>
 </div>
 <!-- <h2>Hi <%= @user %></h2>
-<h2><%= @calendar.day %></h2>
+<h2><%= @calendar.start_day %></h2>
 <h2><%= @calendar.month %></h2> -->
 <ul>
   <% @property.each do |property| %>
     <li><%= property.name %>:</li>
-    <li><%= property.description %></li>
-    <li><%= property.price %></li>
+    <li><%= property.description %>:</li>
+    <li><%= property.price %>:</li>
     <form action="/property">
-      <input type="submit" value="Book A Date" class="button">
+      <input type="submit" value="Book a Date!" class="button" />
     </form>
   <% end %>
 </ul>
