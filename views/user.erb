@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head class="background-colour">
+  <head class="sky-image logo">
+    <!-- Navigation bar -->
+
+    <nav class="navbar navbar-light bg-light nav_header">
+      <a class="navbar-brand" href="#">
+        <img src="https://i.ibb.co/HzFTZgX/logo-transparent.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        MakersBnB
+      </a>
+    </nav>
+
     <link rel="stylesheet" type="text/css" href="style.css">
 
     <!-- Required meta tags -->
@@ -13,18 +22,29 @@
 
     <title>MakersBnB</title>
 
-    <div>
-      <div class="logo">
-        <img src="https://i.ibb.co/HzFTZgX/logo-transparent.png" alt="logo" border="0" class="center" >
-      </div>
-      <!-- <div class="background">
-        <img src="https://i.ibb.co/k4F4H9c/sky.png" alt="sky" border="0">
-      </div> -->
-    </div>
+
   </head>
 
   <body class="background-colour font">
-    <div class = "class1">
+    <div>
+      <div style media="position: relative; left: 0; top: 0;">
+        <img src="https://i.ibb.co/k4F4H9c/sky.png" alt="sky" border="0" class="sky-image">
+        <!-- <img src="https://i.ibb.co/HzFTZgX/logo-transparent.png" alt="logo" border="0" class="center logo" > -->
+      </div>
+      <!-- <div class="background image-header bg"> -->
+        <!-- <img src="https://i.ibb.co/k4F4H9c/sky.png" alt="sky" border="0" class="bg opacity"> -->
+      <!-- </div> -->
+    </div>
+    <!-- Form Divs -->
+    <div class = "container class2">
+      <section class="row">
+        <div class="col-4">
+          <img src="https://i.ibb.co/HzFTZgX/logo-transparent.png" alt="logo" border="0">
+        </div>
+
+
+
+        <div class="col-3">
       <h2>Sign in</h2>
       <h1></h1>
       <form action="/sign_in" method="post">
@@ -36,9 +56,12 @@
         <h1></h1>
          <input type="submit" value="Sign In" class="button">
       </form>
-    </div>
+      </div>
 
-    <div class="class2">
+    <!-- </div> -->
+
+    <!-- <div class="class2"> -->
+    <div class="col-4">
       <h2>Create Account</h2>
       <h1></h1>
       <form action="/create_account" method="post">
@@ -50,6 +73,8 @@
         <h1></h1>
         <input type="submit" value="Create Account" class="button">
       </form>
+    </div>
+    </section>
     </div>
   </body>
 </html>
