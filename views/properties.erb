@@ -5,7 +5,8 @@
 <h1>Makers BnB</h1>
 <h2>Welcome <%= @name %>!</h2>
 <h2>This is testing the calendar month: <%= @calendar.month %></h2>
-<h2>This is testing the calendar day: <%= @calendar.day %></h2>
+<h2>This is testing the calendar starting day: <%= @calendar.start_day %></h2>
+<h2>This is testing the calendar ending day: <%= @calendar.end_day %></h2>
 <ul>
   <% @property.each do |property| %>
     <li><%= property.name %>:</li>

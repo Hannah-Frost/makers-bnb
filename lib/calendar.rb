@@ -1,28 +1,52 @@
 require 'pg'
+require_relative 'booking'
 
 class Calendar
-  attr_reader :month, :day
+  attr_reader :month, :start_day, :end_day
 
   def initialize
     @month = "January"
-    @day = 1
+    @start_day = 1
+    @end_day = 3
+    @unavailable = 0
   end
 
   def add_month(month)
     @month = month
   end
 
-  def add_day(day)
-    @day = day
+  def add_start_day(day)
+    @start_day = day
   end
 
-  def self.find
+  def add_end_day(day)
+    @end_day = day
+  end
+
+  def confirm_availability
+    self.find
+    available?
+    @unavailable = 0
+  end
+
+  def find_availability
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'makersbnb_test')
     else
       connection = PG.connect(dbname: 'makersbnb')
     end
-    connection.exec("SELECT month, day, availability FROM calendar WHERE month = '#{@month}' AND day BETWEEN '#{@start_day}' AND '#{@end_day}';")
+    calendar = connection.exec("SELECT month, day, availability FROM calendar WHERE month = '#{@month}' AND day BETWEEN '#{@start_day}' AND '#{@end_day}';")
+    calendar.map { |date|
+      booking = Booking.new(availability: date['availability'])
+      if booking.availability == "N"
+        @unavailable += 1
+      else
+      end
+    }
+  end
+
+  def available?
+    @unavailable > 0 ? false : true
   end
 
 end
