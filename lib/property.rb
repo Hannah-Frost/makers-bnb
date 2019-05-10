@@ -1,4 +1,5 @@
 require 'pg'
+require_relative 'select'
 
 class Property
   attr_reader :name, :description, :price
@@ -28,4 +29,15 @@ class Property
     end
     connection.exec("INSERT INTO properties (name, description, price) VALUES('#{name}', '#{description}', '#{price}') RETURNING name, description, price")
   end
+
+def self.find_id(name:, description:)
+  if ENV['ENVIRONMENT'] == 'test'
+    connection = PG.connect(dbname: 'makersbnb_test')
+  else
+    connection = PG.connect(dbname: 'makersbnb')
+  end
+result = connection.exec("SELECT * FROM properties WHERE name = #{name} and #{description};")
+Select.new(result[0]['id'])
+  end
+
 end
