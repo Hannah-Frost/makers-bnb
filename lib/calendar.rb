@@ -49,4 +49,8 @@ class Calendar
     end
   end
 
+  def book
+    Booking.new("Y").add_booking(@month, @start_day, @end_day)
+  end
+
 end

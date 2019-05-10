@@ -59,6 +59,8 @@ enable :sessions
   end
 
   post '/confirm_booking' do
+    calendar = session[:calendar]
+    calendar.book
     redirect '/properties'
   end
 
