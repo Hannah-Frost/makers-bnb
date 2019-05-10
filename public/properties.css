@@ -1,4 +1,23 @@
 
+h2 {
+  font-family: 'Poppins', sans-serif;
+
+}
+ul {
+  font-family: 'Poppins', sans-serif;
+  list-style: none;
+  float: left;
+  font-size: 25px;
+  margin: 25px 25px;
+}
+
+li {
+  margin: 15px 0;
+}
+text {
+  font-size: 20px;
+}
+
 body {
   background-color: #EBF8FD;
 }
@@ -16,3 +35,24 @@ body {
   color: white;
 }
 
+sign-out {
+  display: inline-block;
+  float: right;
+  padding: 5px 10px 0px 0px;
+}
+
+add-listing {
+  display: inline-block;
+  float: right;
+  padding: 5px 0px 0px 850px;
+}
+
+  .h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 400px;
+}
+
+  .h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+}
