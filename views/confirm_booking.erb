@@ -1,0 +1,17 @@
+<% if @calendar.available? %>
+<h1> <%= @calendar.month %> : <%= @calendar.start_day %>-<%= @calendar.end_day %> </h1>
+<h1>These dates are available.</h1>
+<h1> Would you like to confirm your booking? </h1>
+<form action="/confirm_booking" method="post">
+  <input type="submit" value="Yes" class="button" />
+</form>
+<form action="/properties">
+  <input type="submit" value="No" class="button" />
+</form>
+<% else %>
+<h1> <%= @calendar.month %> : <%= @calendar.start_day %>-<%= @calendar.end_day %> </h1>
+<h1>These dates are not available.</h1>
+<form action="/properties">
+  <input type="submit" value="Back to Property Listings" class="button" />
+</form>
+<% end %>
