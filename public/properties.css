@@ -1,16 +1,14 @@
-h1 {
-  font-family: 'Poppins', sans-serif;
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px 500px 0px 500px;
-}
 
 h2 {
   font-family: 'Poppins', sans-serif;
+
 }
 ul {
   font-family: 'Poppins', sans-serif;
+}
+
+text {
+  font-size: 20px;
 }
 
 body {
@@ -33,5 +31,17 @@ body {
 sign-out {
   display: inline-block;
   float: right;
-  padding: 0px 15px 0px 210px;
+  padding: 5px 15px 0px 210px;
+}
+
+  h2 {
+  font-family: 'Poppins', sans-serif;
+   display: inline;
+   padding: 10px 550px 0px 550px;
+}
+
+h3 {
+  font-family: 'Poppins', sans-serif;
+   display: inline;
+  float: right;
 }
