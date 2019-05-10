@@ -50,7 +50,7 @@ class Calendar
   end
 
   def book
-    Booking.new("Y").add_booking(@month, @start_day, @end_day)
+    Booking.new(availability: 'Y').add_booking(@month, @start_day, @end_day)
   end
 
 end
