@@ -1,12 +1,15 @@
 require 'sinatra/base'
 require './lib/property.rb'
 require './lib/user.rb'
+require './lib/calendar.rb'
 
 class MakersBnB < Sinatra::Base
 
 enable :sessions
 
   get '/' do
+    @calendar = Calendar.new
+    session[:calendar] = @calendar
     erb :user
   end
 
@@ -31,6 +34,7 @@ enable :sessions
   end
 
   get '/properties' do
+    @calendar = session[:calendar]
     @user = User.exist?(session[:email])
     @property = Property.all
     @name = session[:name]
@@ -39,8 +43,15 @@ enable :sessions
   end
 
   get '/property' do
+    @calendar = session[:calendar]
+    @calendar.add_month(month: params[:month])
+    session[:calendar] = @calendar
     @property = Property.all
     erb :property
+  end
+
+  post '/property' do
+    redirect '/properties'
   end
 
   get '/add' do

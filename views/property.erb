@@ -2,6 +2,9 @@
   <input type="submit" value="Sign Out">
 </form>
 
+<h2><%= @calendar.month %></h2>
+<h2><%= @calendar.day %></h2>
+
 <h1>Makers BnB</h1>
 
 <% @property.each do |property| %>
@@ -27,14 +30,15 @@ th, td {
 
 <h2>Choose a Starting Date!</h2>
 
+<form action="/property" method="post">
 <table style="width:20%">
   <tr>
-    <th colspan="7"><select id="month" class="dropdown">
+    <th colspan="7"><select name="month" class="dropdown">
           <option value="january">January</option>
           <option value="february">February</option>
           <option value="march">March</option>
           <option value="april">April</option>
-          <option value="june" selected >June</option>
+          <option value="june">June</option>
           <option value="july">July</option>
           <option value="august">August</option>
           <option value="september">September</option>
@@ -44,8 +48,8 @@ th, td {
     </select></th>
   </tr>
   <tr>
-    <td><button type="button" onclick="alert('')">1</button></td>
-    <td><button type="button" onclick="alert('')">2</button></td>
+    <td><button type="button" onclick="@calendar.add_day(1)">1</button></td>
+    <td><button type="button" onclick="@calendar.add_day(2)">2</button></td>
     <td><button type="button" onclick="alert('')">3</button></td>
     <td><button type="button" onclick="alert('')">4</button></td>
     <td><button type="button" onclick="alert('')">5</button></td>
@@ -89,5 +93,7 @@ th, td {
     <td></td>
   </tr>
 </table>
+  <input type="submit" value="Book">
+</form>
 </body>
 </html>
