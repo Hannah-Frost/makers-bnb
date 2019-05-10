@@ -1,5 +1,9 @@
+.background-colour {
+  background-color: #EBF8FD;
+}
+
 .font {
-  font-family: monospace;
+  font-family: 'Raleway', sans-serif;
 }
 
 .nav_header {
@@ -12,19 +16,23 @@ img {
   margin-right: auto;
   padding-top: 30px;
 }
+
 h2 {
   font-family: 'Poppins', sans-serif;
 }
+
 .images {
   position: relative;
   top: 0;
   left: 0;
 }
+
 .logo {
   position: relative;
   top: 0;
   left: 0;
 }
+
 .background {
   position: absolute;
   top: 30px;
@@ -38,14 +46,11 @@ h2 {
   padding: 0px 5px 0px 210px;
   text-align: center;
 }
+
 h1 {
   padding: 10px 0px 10px 0px;
 }
-body {
-  font-family: 'Raleway', sans-serif;
-  background-color: #EBF8FD;
-  font-family: '', sans-serif;
-}
+
 .button {
   border-radius: 15px 15px 15px 15px;
   border: 3px solid #C1D3D6;
