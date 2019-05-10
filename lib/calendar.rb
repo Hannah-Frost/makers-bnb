@@ -8,11 +8,11 @@ class Calendar
     @day = 1
   end
 
-  def add_month(month:)
+  def add_month(month)
     @month = month
   end
 
-  def add_day(day:)
+  def add_day(day)
     @day = day
   end
 

@@ -8,8 +8,7 @@ class MakersBnB < Sinatra::Base
 enable :sessions
 
   get '/' do
-    @calendar = Calendar.new
-    session[:calendar] = @calendar
+    session[:calendar] = Calendar.new
     erb :user
   end
 
@@ -43,14 +42,14 @@ enable :sessions
   end
 
   get '/property' do
-    @calendar = session[:calendar]
-    @calendar.add_month(month: params[:month])
-    session[:calendar] = @calendar
     @property = Property.all
     erb :property
   end
 
   post '/property' do
+    calendar = Calendar.new
+    calendar.add_month(params[:month])
+    session[:calendar] = calendar
     redirect '/properties'
   end
 
